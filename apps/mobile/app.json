@@ -1,0 +1,78 @@
+{
+  "expo": {
+    "name": "REAL LIFE+",
+    "slug": "realif-plus",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#000000"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.realif.plus",
+      "infoPlist": {
+        "NSHealthShareUsageDescription": "REAL LIFE+ needs access to your activity data to reward you in-game for real-life activities.",
+        "NSHealthUpdateUsageDescription": "REAL LIFE+ needs access to your health data to sync your progress.",
+        "NSLocationWhenInUseUsageDescription": "REAL LIFE+ uses your location to unlock real-world venues in the game.",
+        "NSCameraUsageDescription": "REAL LIFE+ needs camera access to create your avatar and share content."
+      },
+      "entitlements": {
+        "com.apple.developer.healthkit": true,
+        "com.apple.developer.healthkit.access": [
+          "health-records"
+        ]
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#000000"
+      },
+      "package": "com.realif.plus",
+      "permissions": [
+        "ACTIVITY_RECOGNITION",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow REAL LIFE+ to access your camera for avatar creation."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow REAL LIFE+ to use your location to unlock real-world venues."
+        }
+      ],
+      "react-native-health"
+    ],
+    "scheme": "realifplus",
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "your-project-id"
+      }
+    }
+  }
+}
